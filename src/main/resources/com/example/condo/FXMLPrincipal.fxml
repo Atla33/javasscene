@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.condo.visao.HelloController">
+   <children>
+      <AnchorPane fx:id="telaPrincipal" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Button fx:id="bntTellogin" layoutX="368.0" layoutY="172.0" mnemonicParsing="false" onAction="#trocarTellogin" text="Go" />
+            <Button fx:id="bntTelcadastro" layoutX="368.0" layoutY="106.0" mnemonicParsing="false" onAction="#trocarTelcadastro" text="Go" />
+            <Text layoutX="151.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem vindo ao condo soul">
+               <font>
+                  <Font name="Times New Roman Italic" size="33.0" />
+               </font>
+            </Text>
+            <Text layoutX="192.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Já sou cadastrado">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="192.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fazer cadastro">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telaLogin" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <TextField fx:id="fieldLogin" layoutX="274.0" layoutY="102.0" />
+            <TextField fx:id="fieldSenha" layoutX="273.0" layoutY="139.0" />
+            <Text layoutX="274.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+               <font>
+                  <Font name="Times New Roman Italic" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="173.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login (Nome)">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Text layoutX="173.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha(CPF)">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Button fx:id="bntEntrar" layoutX="173.0" layoutY="200.0" mnemonicParsing="false" onAction="#trocarTelmenu" text="Entrar" />
+            <Button fx:id="bntCadastro2" layoutX="274.0" layoutY="200.0" mnemonicParsing="false" onAction="#trocarTelcadastro" text="Cadastro" />
+            <Button fx:id="bntPrincipal2" layoutX="384.0" layoutY="200.0" mnemonicParsing="false" onAction="#trocarTelprincipal" text="Principal" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telaCadastro" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Text layoutX="247.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro">
+               <font>
+                  <Font name="Times New Roman" size="30.0" />
+               </font>
+            </Text>
+            <TextField fx:id="feildIDmorador" layoutX="226.0" layoutY="84.0" />
+            <TextField fx:id="fieldNomemorador" layoutX="225.0" layoutY="118.0" />
+            <TextField fx:id="fieldDatamorador" layoutX="226.0" layoutY="154.0" />
+            <TextField fx:id="fieldEmailmorador" layoutX="225.0" layoutY="187.0" />
+            <TextField fx:id="fieldCasamorador" layoutX="226.0" layoutY="220.0" />
+            <Text layoutX="154.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text layoutX="144.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" />
+            <Text layoutX="112.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento" />
+            <Text layoutX="144.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
+            <Text layoutX="130.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nº da Casa" />
+            <Button fx:id="bntCadastro" layoutX="166.0" layoutY="302.0" mnemonicParsing="false" onAction="#realizarCadastro" text="Cadastrar" />
+            <Button fx:id="bntPrincipal" layoutX="376.0" layoutY="302.0" mnemonicParsing="false" onAction="#trocarTelprincipal" text="Principal" />
+            <Button fx:id="bntLogin1" layoutX="285.0" layoutY="302.0" mnemonicParsing="false" onAction="#trocarTellogin" text="Login" />
+            <Text fx:id="cadastroAcertoeerro" fill="#ce0808" layoutX="50.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Button fx:id="bntOkcadastro" layoutX="183.0" layoutY="346.0" mnemonicParsing="false" onAction="#voltarTelcadastromotador" text="Ok" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telaMenu" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Text layoutX="232.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu">
+               <font>
+                  <Font name="Times New Roman Italic" size="35.0" />
+               </font>
+            </Text>
+            <Text layoutX="193.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar Cadrasto">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="197.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Evento">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="193.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arquivo">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="193.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Permissões">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="bntConsulta" layoutX="340.0" layoutY="95.0" mnemonicParsing="false" onAction="#trocarTelconsulta" text="ok" />
+            <Button fx:id="bntEvento" layoutX="340.0" layoutY="127.0" mnemonicParsing="false" onAction="#trocarTelevento" text="ok" />
+            <Button fx:id="bntArquivo" layoutX="340.0" layoutY="161.0" mnemonicParsing="false" onAction="#trocarTelarquivo" text="ok" />
+            <Button fx:id="bntPermissoes" layoutX="340.0" layoutY="197.0" mnemonicParsing="false" onAction="#trocarTelpermissoes" text="ok" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telaBuscar" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Text layoutX="149.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o ID:" />
+            <Text layoutX="114.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar/Alterar/Excluir Cadastro">
+               <font>
+                  <Font name="Times New Roman" size="28.0" />
+               </font>
+            </Text>
+            <TextField fx:id="caeField" layoutX="236.0" layoutY="93.0" />
+            <Button fx:id="bntBuscar" layoutX="153.0" layoutY="188.0" mnemonicParsing="false" onAction="#realizarBusca" text="Buscar" />
+            <Button fx:id="bntAlterar" layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#TrocarTelaalteracao" text="Alterar" />
+            <Button fx:id="bntExcluir" layoutX="409.0" layoutY="188.0" mnemonicParsing="false" onAction="#realizarExclusao" text="Excluir" />
+            <Button fx:id="bntMenu1" layoutX="274.0" layoutY="256.0" mnemonicParsing="false" onAction="#trocarTelmenu" text="Menu" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telaAlteracao" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Text layoutX="140.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alteração de cadastro">
+               <font>
+                  <Font name="Times New Roman Italic" size="36.0" />
+               </font>
+            </Text>
+            <Text layoutX="66.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID do morador:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="fieldAlterarnnome" layoutX="318.0" layoutY="132.0" />
+            <Text layoutX="65.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do morador:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="65.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail do morador:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="66.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N da Casa do morador:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="66.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento do morador:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="fieldAlterarnemail" layoutX="318.0" layoutY="164.0" />
+            <TextField fx:id="fieldAlterarnnúmero" layoutX="318.0" layoutY="199.0" />
+            <TextField fx:id="fieldAlterardatadenascimento" layoutX="318.0" layoutY="234.0" />
+            <TextField fx:id="fieldAlterarnID" layoutX="318.0" layoutY="99.0" />
+            <Button fx:id="bntAlterarcadastro" layoutX="158.0" layoutY="316.0" mnemonicParsing="false" onAction="#realizarAlteracaocadastro" text="Alterar" />
+            <Button fx:id="bntTelabaecadastro" layoutX="358.0" layoutY="316.0" mnemonicParsing="false" onAction="#trocarTelconsulta" text="Voltar" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telaEvento" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Text layoutX="262.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eventos">
+               <font>
+                  <Font name="Times New Roman Italic" size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="168.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Novo Evento">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="168.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar/Alterar/Excluir Evento">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="bntCastroevento" layoutX="381.0" layoutY="89.0" mnemonicParsing="false" onAction="#telaCadastroevento" text="Ok" />
+            <Button fx:id="bntBAE" layoutX="381.0" layoutY="137.0" mnemonicParsing="false" onAction="#telaBAEevento" text="Ok" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Text layoutX="211.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar Evento">
+               <font>
+                  <Font name="Times New Roman Italic" size="25.0" />
+               </font>
+            </Text>
+            <Text layoutX="149.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID do Evento">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="148.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Morador">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="148.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="149.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do Evento">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="148.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="fieldDescricaoeventos" layoutX="283.0" layoutY="270.0" prefHeight="63.0" prefWidth="203.0" />
+            <TextField fx:id="fieldLocaleventos" layoutX="283.0" layoutY="165.0" />
+            <TextField fx:id="fieldIDmoradoreventos" layoutX="283.0" layoutY="127.0" />
+            <TextField fx:id="fieldIDeventos" layoutX="283.0" layoutY="89.0" />
+            <TextField fx:id="fieldDataeventos" layoutX="283.0" layoutY="200.0" />
+            <TextField fx:id="fieldDuracaoeventos" layoutX="283.0" layoutY="234.0" />
+            <Text layoutX="148.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duração">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="bntCadastroevento1" layoutX="152.0" layoutY="361.0" mnemonicParsing="false" onAction="#realizarCadastroevento" text="Cadastra" />
+            <Button fx:id="bntTelEvento" layoutX="283.0" layoutY="361.0" mnemonicParsing="false" onAction="#trocarTelevento" text="Evento" />
+            <Button fx:id="bntTelmenu" layoutX="400.0" layoutY="361.0" mnemonicParsing="false" onAction="#trocarTelmenu" text="Menu" />
+            <Text fx:id="erroAcertoEventos" layoutX="37.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Button fx:id="bntOKeventos" layoutX="33.0" layoutY="349.0" mnemonicParsing="false" onAction="#voltarTelokeventos" text="OK" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telaBAE" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Text layoutX="86.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar/Alterar/Excluir Evento">
+               <font>
+                  <Font name="Times New Roman Italic" size="35.0" />
+               </font>
+            </Text>
+            <Text layoutX="138.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o ID do Evento:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="fieldBAEevento" layoutX="320.0" layoutY="112.0" prefHeight="25.0" prefWidth="165.0" />
+            <Button fx:id="bntBuscarevento" layoutX="138.0" layoutY="208.0" mnemonicParsing="false" onAction="#realizarBuscaevento" text="Buscar" />
+            <Button fx:id="bntAlterarevento" layoutX="275.0" layoutY="208.0" mnemonicParsing="false" onAction="#realizarAlteraçãoevento" text="Alterar" />
+            <Button fx:id="bntExcluirevento" layoutX="415.0" layoutY="208.0" mnemonicParsing="false" onAction="#realizarExclusaoevento" text="Excluir" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telBuscaevento" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="tabvEventos" layoutX="9.0" layoutY="80.0" prefHeight="200.0" prefWidth="582.0">
+              <columns>
+                <TableColumn fx:id="tabcIDevento" prefWidth="126.6666259765625" text="ID do evento" />
+                <TableColumn fx:id="tabcTipoevento" prefWidth="126.00003051757812" text="Tipo do evento" />
+                  <TableColumn fx:id="tabcDuracaoevento" prefWidth="111.99996948242188" text="Duração do evento" />
+                  <TableColumn fx:id="tabcLocalevento" prefWidth="94.0" text="Local do evento" />
+                  <TableColumn fx:id="tabcDescricaoevento" prefWidth="122.66668701171875" text="Descrição do evento" />
+              </columns>
+            </TableView>
+            <Button fx:id="trocarTelabae" layoutX="274.0" layoutY="316.0" mnemonicParsing="false" onAction="#trocarTelbae" text="Voltar" />
+            <Text layoutX="171.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resultado da busca">
+               <font>
+                  <Font name="Times New Roman Italic" size="33.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="telaAlteração1" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <Text layoutX="140.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alteração de evento">
+               <font>
+                  <Font name="Times New Roman Italic" size="36.0" />
+               </font>
+            </Text>
+            <Text layoutX="66.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID do Evento:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="fieldAlterarnnome1" layoutX="318.0" layoutY="132.0" />
+            <Text layoutX="65.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID do Morador:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="64.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local do Evento:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="66.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do Evento:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="66.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição do Evento:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="fieldAlterarnemail1" layoutX="318.0" layoutY="164.0" />
+            <TextField fx:id="fieldAlterarnnúmero1" layoutX="318.0" layoutY="199.0" />
+            <TextField fx:id="fieldAlterardatadenascimento1" layoutX="318.0" layoutY="268.0" />
+            <TextField fx:id="fieldAlterarnID1" layoutX="318.0" layoutY="99.0" />
+            <Button fx:id="bntAlterarevento1" layoutX="158.0" layoutY="316.0" mnemonicParsing="false" onAction="#realizarAlteracaoevento" text="Alterar" />
+            <Button fx:id="bntTelabaecadastro1" layoutX="358.0" layoutY="316.0" mnemonicParsing="false" onAction="#trocarTelbae" text="Voltar" />
+            <Text layoutX="64.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duração do Evento:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField layoutX="318.0" layoutY="232.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
