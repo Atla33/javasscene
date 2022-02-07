@@ -1,7 +1,7 @@
 package com.example.condo.Visao;
 
 import Dominio.Eventos;
-import Persistencia.EventosDAO;
+
 import Persistencia.MoradorDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -285,15 +285,15 @@ public class HelloController {
         Eventos e = null;
         EventosDAO eDAO = new EventosDAO();
 
-        e = eDAO.buscar(integer.parseInt(fieldIDeventos.getText()));
+        e = eDAO.buscar(Integer.parseInt(fieldIDeventos.getText()));
 
         if(e == null){
 
             e = new Eventos();
 
-            e.setId(integer.parseInt(fieldIDeventos.getText()));
+            e.setId(Integer.parseInt(fieldIDeventos.getText()));
             e.setLocal(fieldLocaleventos.getText());
-            e.setDuracao(integer.parseInt(fieldDuracaoeventos.getText()));
+            e.setDuracao(fieldDuracaoeventos.getText());
             e.setDecricao(fieldDescricaoeventos.getText());
 
             this.erroAcertoEventos.setVisible(true);
