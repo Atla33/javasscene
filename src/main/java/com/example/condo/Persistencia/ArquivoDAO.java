@@ -1,4 +1,4 @@
-package Persistencia;
+package com.example.condo.Persistencia;
 
 import Dominio.Arquivo;
 import com.example.condo.Persistencia.Conexao;

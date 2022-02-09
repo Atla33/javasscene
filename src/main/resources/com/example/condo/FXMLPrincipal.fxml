@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.condo.visao.HelloController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.condo.HelloController">
    <children>
       <AnchorPane fx:id="telaPrincipal" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
@@ -74,7 +74,8 @@
             <Button fx:id="bntPrincipal" layoutX="376.0" layoutY="302.0" mnemonicParsing="false" onAction="#trocarTelprincipal" text="Principal" />
             <Button fx:id="bntLogin1" layoutX="285.0" layoutY="302.0" mnemonicParsing="false" onAction="#trocarTellogin" text="Login" />
             <Text fx:id="cadastroAcertoeerro" fill="#ce0808" layoutX="50.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
-            <Button fx:id="bntOkcadastro" layoutX="183.0" layoutY="346.0" mnemonicParsing="false" onAction="#voltarTelcadastromotador" text="Ok" />
+            <Button fx:id="bntOkcadastro" layoutX="56.0" layoutY="341.0" mnemonicParsing="false" onAction="#voltarTelcadastromotador" text="Ok" visible="false" />
+            <Text fx:id="texCadastromorador" layoutX="61.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="telaMenu" prefHeight="400.0" prefWidth="600.0" visible="false">
@@ -122,7 +123,7 @@
             <Button fx:id="bntBuscar" layoutX="153.0" layoutY="188.0" mnemonicParsing="false" onAction="#realizarBusca" text="Buscar" />
             <Button fx:id="bntAlterar" layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#TrocarTelaalteracao" text="Alterar" />
             <Button fx:id="bntExcluir" layoutX="409.0" layoutY="188.0" mnemonicParsing="false" onAction="#realizarExclusao" text="Excluir" />
-            <Button fx:id="bntMenu1" layoutX="274.0" layoutY="256.0" mnemonicParsing="false" onAction="#trocarTelmenu" text="Menu" />
+            <Button fx:id="bntMenu1" layoutX="274.0" layoutY="256.0" mnemonicParsing="false" onAction="#voltarTelamenu" text="Menu" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="telaAlteracao" prefHeight="400.0" prefWidth="600.0" visible="false">
@@ -166,7 +167,7 @@
             <Button fx:id="bntTelabaecadastro" layoutX="358.0" layoutY="316.0" mnemonicParsing="false" onAction="#trocarTelconsulta" text="Voltar" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="telaEvento" prefHeight="400.0" prefWidth="600.0" visible="false">
+      <AnchorPane fx:id="telaEvento" prefHeight="400.0" prefWidth="600.0">
          <children>
             <Text layoutX="262.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eventos">
                <font>
@@ -187,7 +188,7 @@
             <Button fx:id="bntBAE" layoutX="381.0" layoutY="137.0" mnemonicParsing="false" onAction="#telaBAEevento" text="Ok" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" visible="false">
+      <AnchorPane fx:id="telaCadastroevento" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
             <Text layoutX="211.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar Evento">
                <font>
@@ -253,9 +254,11 @@
             <Button fx:id="bntBuscarevento" layoutX="138.0" layoutY="208.0" mnemonicParsing="false" onAction="#realizarBuscaevento" text="Buscar" />
             <Button fx:id="bntAlterarevento" layoutX="275.0" layoutY="208.0" mnemonicParsing="false" onAction="#realizarAlteraçãoevento" text="Alterar" />
             <Button fx:id="bntExcluirevento" layoutX="415.0" layoutY="208.0" mnemonicParsing="false" onAction="#realizarExclusaoevento" text="Excluir" />
+            <Button fx:id="bntMenu2" layoutX="274.0" layoutY="288.0" mnemonicParsing="false" onAction="#voltarTelamenu" text="Menu" />
+            <Text fx:id="textErrobuscaevento" layoutX="63.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="telBuscaevento" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane fx:id="telBuscaevento" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
             <TableView fx:id="tabvEventos" layoutX="9.0" layoutY="80.0" prefHeight="200.0" prefWidth="582.0">
               <columns>

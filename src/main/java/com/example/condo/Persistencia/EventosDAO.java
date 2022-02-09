@@ -1,11 +1,12 @@
 package com.example.condo.Persistencia;
 
 import Dominio.Eventos;
-import com.example.condo.Persistencia.Conexao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class EventosDAO {
 

@@ -1,8 +1,11 @@
-package com.example.condo.Visao;
+package com.example.condo;
 
 import Dominio.Eventos;
-import Persistencia.EventosDAO;
-import Persistencia.MoradorDAO;
+
+import Dominio.NovissimaPessoa;
+import com.example.condo.Dominio.Pessoa;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,11 +14,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import com.example.condo.Dominio.*;
 import com.example.condo.Persistencia.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.util.ArrayList;
+
 public class HelloController {
+
+    private ObservableList<Eventos> EventosS = FXCollections.observableArrayList();
 
     @FXML
     private Button bntAlterar;
@@ -189,22 +195,22 @@ public class HelloController {
     private TextField fieldSenha;
 
     @FXML
-    private TableColumn<?, ?> tabcDescricaoevento;
+    private TableColumn<Eventos, String> tabcDescricaoevento;
 
     @FXML
-    private TableColumn<?, ?> tabcDuracaoevento;
+    private TableColumn<Eventos, String> tabcDuracaoevento;
 
     @FXML
-    private TableColumn<?, ?> tabcIDevento;
+    private TableColumn<Eventos, Integer> tabcIDevento;
 
     @FXML
-    private TableColumn<?, ?> tabcLocalevento;
+    private TableColumn<Eventos, String> tabcLocalevento;
 
     @FXML
-    private TableColumn<?, ?> tabcTipoevento;
+    private TableColumn<Eventos, String> tabcTipoevento;
 
     @FXML
-    private TableView<?> tabvEventos;
+    private TableView<Eventos> tabvEventos;
 
     @FXML
     private AnchorPane telBuscaevento;
@@ -225,10 +231,19 @@ public class HelloController {
     private AnchorPane telaCadastro;
 
     @FXML
+    private AnchorPane telaCadastroevento;
+
+    @FXML
     private AnchorPane telaEvento;
 
     @FXML
     private AnchorPane telaLogin;
+
+    @FXML
+    private Button bntMenu2;
+
+    @FXML
+    private Text textErrobuscaevento;
 
     @FXML
     private AnchorPane telaMenu;
@@ -237,10 +252,16 @@ public class HelloController {
     private AnchorPane telaPrincipal;
 
     @FXML
+    private Text texCadastromorador;
+
+    @FXML
     private Button trocarTelabae;
 
     @FXML
     void TrocarTelaalteracao(ActionEvent event) {
+
+        this.telaBuscar.setVisible(false);
+        this.telaAlteracao.setVisible(true);
 
     }
 
@@ -257,6 +278,9 @@ public class HelloController {
     @FXML
     void realizarAlteraçãoevento(ActionEvent event) {
 
+        this.telaBAE.setVisible(false);
+        this.telaAlteração1.setVisible(true);
+
     }
 
     @FXML
@@ -266,16 +290,73 @@ public class HelloController {
 
     @FXML
     void realizarBuscaevento(ActionEvent event) {
+        if(!fieldBAEevento.getText().equals("")) {
+
+            Eventos e = new Eventos();
+            EventosDAO eDAO = new EventosDAO();
+
+            e = eDAO.buscar(Integer.parseInt(fieldBAEevento.getText()));
+
+            if(e == null){
+
+                this.textErrobuscaevento.setVisible(true);
+                textErrobuscaevento.setText("ERRO!!! ID não encontrado");
+
+            }
+
+            else{
+
+                this.telaBAE.setVisible(false);
+                this.telBuscaevento.setVisible(true);
+
+                tabcIDevento.setCellValueFactory(new PropertyValueFactory <> ("id"));
+                tabcIDevento.setCellValueFactory(new PropertyValueFactory <> ("tipo"));
+                tabcIDevento.setCellValueFactory(new PropertyValueFactory <> ("duracao"));
+                tabcIDevento.setCellValueFactory(new PropertyValueFactory <> ("local"));
+                tabcIDevento.setCellValueFactory(new PropertyValueFactory <> ("descricao"));
+
+                EventosS.clear();
+                EventosS.addAll(e);
+                tabvEventos.setItems(EventosS);
+            }
+
+        }
 
     }
 
     @FXML
     void realizarCadastro(ActionEvent event) {
 
+        ArrayList<NovissimaPessoa> p = null;
+        MoradorDAO mDAO = new MoradorDAO();
+
+        p = mDAO.buscarPessoas(Integer.parseInt(feildIDmorador.getText()));
+
+        if(p == null){
+
+            p = new ArrayList<NovissimaPessoa>();
+
+
+
+            this.bntOkcadastro.setVisible(true);
+            texCadastromorador.setText("Cadastro efetuado");
+            this.texCadastromorador.setVisible(true);
+        }
+        else{
+
+            this.bntOkcadastro.setVisible(true);
+            texCadastromorador.setText("Erro, cadastro já realizado!!!!!");
+            this.texCadastromorador.setVisible(true);
+        }
+
     }
 
     @FXML
     void voltarTelcadastromotador(ActionEvent event) {
+
+        this.texCadastromorador.setVisible(false);
+        texCadastromorador.setText("");
+        this.bntOkcadastro.setVisible(false);
 
     }
 
@@ -285,15 +366,15 @@ public class HelloController {
         Eventos e = null;
         EventosDAO eDAO = new EventosDAO();
 
-        e = eDAO.buscar(integer.parseInt(fieldIDeventos.getText()));
+        e = eDAO.buscar(Integer.parseInt(fieldIDeventos.getText()));
 
         if(e == null){
 
             e = new Eventos();
 
-            e.setId(integer.parseInt(fieldIDeventos.getText()));
+            e.setId(Integer.parseInt(fieldIDeventos.getText()));
             e.setLocal(fieldLocaleventos.getText());
-            e.setDuracao(integer.parseInt(fieldDuracaoeventos.getText()));
+            e.setDuracao(fieldDuracaoeventos.getText());
             e.setDecricao(fieldDescricaoeventos.getText());
 
             this.erroAcertoEventos.setVisible(true);
@@ -337,6 +418,9 @@ public class HelloController {
     @FXML
     void telaCadastroevento(ActionEvent event) {
 
+        this.telaEvento.setVisible(false);
+        this.telaCadastroevento.setVisible(true);
+
     }
 
     @FXML
@@ -346,6 +430,11 @@ public class HelloController {
 
     @FXML
     void trocarTelbae(ActionEvent event) {
+
+        this.telBuscaevento.setVisible(false);
+        textErrobuscaevento.setText("");
+        this.textErrobuscaevento.setVisible(false);
+        this.telaBAE.setVisible(true);
 
     }
 
@@ -360,10 +449,16 @@ public class HelloController {
     @FXML
     void trocarTelconsulta(ActionEvent event) {
 
+        this.telaMenu.setVisible(false);
+        this.telaBuscar.setVisible(true);
+
     }
 
     @FXML
     void trocarTelevento(ActionEvent event) {
+
+        this.telaMenu.setVisible(false);
+        this.telaEvento.setVisible(true);
 
     }
 
@@ -373,6 +468,15 @@ public class HelloController {
         this.telaPrincipal.setVisible(false);
         this.telaCadastro.setVisible(false);
         this.telaLogin.setVisible(true);
+
+    }
+
+    @FXML
+    void voltarTelamenu(ActionEvent event) {
+
+        this.telaBAE.setVisible(false);
+        this.telaBuscar.setVisible(false);
+        this.telaMenu.setVisible(true);
 
     }
 
@@ -399,6 +503,10 @@ public class HelloController {
 
     @FXML
     void trocarTelprincipal(ActionEvent event) {
+
+        this.telaPrincipal.setVisible(true);
+        this.telaCadastro.setVisible(false);
+        this.telaLogin.setVisible(false);
 
     }
 

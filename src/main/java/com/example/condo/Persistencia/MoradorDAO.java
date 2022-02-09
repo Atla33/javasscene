@@ -1,4 +1,4 @@
-package Persistencia;
+package com.example.condo.Persistencia;
 
 import Dominio.NovissimaPessoa;
 import com.example.condo.Persistencia.Conexao;
@@ -13,7 +13,7 @@ public class MoradorDAO {
 
     private Conexao conexaoDb;
 
-    public ArrayList<NovissimaPessoa> buscarPessoas(){
+    public ArrayList<NovissimaPessoa> buscarPessoas(int i){
         ArrayList lista = new ArrayList();
         try {
             this.conexaoDb.conectar();
